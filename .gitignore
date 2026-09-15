@@ -1,0 +1,41 @@
+# Python caches and test output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Local environments and editor metadata
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Evaluation data and generated inference results
+data/
+exp/
+outputs/
+*.tar
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Released weights under ckpt/ are deliberate repository assets.
+!ckpt/**/*.tar
+!ckpt/**/*.pth
+!ckpt/**/*.pt
+!ckpt/**/*.ckpt
+
+# Released streaming inference weights are deliberate repository assets.
+!streaming/model/**/*.tar
+!streaming/model/**/*.pth
+!streaming/model/**/*.pt
+!streaming/model/**/*.ckpt
+
+# Audio and generated figures/reports
+*.wav
+*.flac
+outputs/*.png
+outputs/*.pdf
+outputs/*.csv
+outputs/*.json

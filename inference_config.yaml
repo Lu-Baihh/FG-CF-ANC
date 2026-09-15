@@ -1,0 +1,30 @@
+# Architecture and evaluation defaults used only by infer.py.
+dataset:
+  sample_rate: 48000
+  segment_duration: 2.0
+  skip_seconds: 20.0
+  seen_path_indices: [0, 1, 2, 3, 4, 5, 6, 7]
+  unseen_path_indices: [8, 9]
+  holdout_noise_count: 2
+
+model:
+  feedforward_gain: 0.5
+  filter_experts_gain: 0.5
+  gating_channels: [6, 12, 12, 9]
+  gating_head_channels: 8
+  gating_temperature: 1.0
+  gating_block_size: 2048
+  feedforward_context_samples: 2052
+
+FeedforwardWaveNet:
+  num_stacks: 2
+  dilations: 8
+  Resblock:
+    conv1d:
+      res: 8
+      skip: 8
+      kernel: [3, 1]
+  conv:
+    input: [1, 16, 8, 16]
+    out: [16, 8, 16, 1]
+    kernel: [3, 3, 3, 3]
